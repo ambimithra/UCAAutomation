@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ASCII"?>
+<com.hp.ucaautomation.decisionTree.plugin:DecisionTreeNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.hp.ucaautomation.decisionTree.plugin="http:///com/hp/ucaautomation/decisionTree/plugin/plugin.ecore">
+  <actionNodes actionName="test_bsc_interface" upstreamLinks="//@problemNodes.2" x="241" y="279"/>
+  <problemNodes/>
+  <problemNodes/>
+  <problemNodes xsi:type="com.hp.ucaautomation.decisionTree.plugin:ProblemActionOutcomeNode" problemName="bsc_interface_down" problemTargetNode="//@actionNodes.0"/>
+  <serviceNodes serviceName="MobileServices" downstreamLinks="//@problemNodes.2" upstreamLinks="//@problemNodes.0" x="226" y="160"/>
+  <serviceNodes serviceName="TestService" upstreamLinks="//@problemNodes.1" x="426" y="160"/>
+  <rootNode downstreamLinks="//@problemNodes.0 //@problemNodes.1" x="326" y="60"/>
+</com.hp.ucaautomation.decisionTree.plugin:DecisionTreeNode>

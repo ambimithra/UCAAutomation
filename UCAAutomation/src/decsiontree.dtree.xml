@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<automation_topology>
+    <problems>
+        <problem>
+            <name>bsc_interface_down</name>
+            <id>100</id>
+        </problem>
+        <problem>
+            <name>unknown_symptom</name>
+            <id>101</id>
+        </problem>
+    </problems>
+    <actions>
+        <action>
+            <name>check_tt</name>
+            <id>101</id>
+            <type>test</type>
+            <actionMode>Closed Loop</actionMode>
+            <dispatchType>Trouble Ticket</dispatchType>
+            <troubleTicketAction>check_tt</troubleTicketAction>
+            <description>check_tt</description>
+            <outputParser>None</outputParser>
+            <actionExecutionMode>Synchronous</actionExecutionMode>
+            <parameters/>
+            <actionOutcomes>
+                <actionOutcome>
+                    <name>check_tt_failed</name>
+                    <id>103</id>
+                </actionOutcome>
+                <actionOutcome>
+                    <name>check_tt_passed</name>
+                    <id>102</id>
+                </actionOutcome>
+            </actionOutcomes>
+        </action>
+        <action>
+            <name>close_tt</name>
+            <id>107</id>
+            <type>recover/resolve</type>
+            <actionMode>Open Loop</actionMode>
+            <dispatchType>Trouble Ticket</dispatchType>
+            <troubleTicketAction>close_tt</troubleTicketAction>
+            <description>close_tt</description>
+            <outputParser>None</outputParser>
+            <actionExecutionMode>Synchronous</actionExecutionMode>
+            <parameters/>
+            <actionOutcomes/>
+        </action>
+        <action>
+            <name>create_tt</name>
+            <id>105</id>
+            <type>recover/resolve</type>
+            <actionMode>Open Loop</actionMode>
+            <dispatchType>Trouble Ticket</dispatchType>
+            <troubleTicketAction>create_tt</troubleTicketAction>
+            <description>create_tt</description>
+            <outputParser>None</outputParser>
+            <actionExecutionMode>Synchronous</actionExecutionMode>
+            <parameters/>
+            <actionOutcomes/>
+        </action>
+        <action>
+            <name>dissociate_tt</name>
+            <id>102</id>
+            <type>recover/resolve</type>
+            <actionMode>Open Loop</actionMode>
+            <dispatchType>Trouble Ticket</dispatchType>
+            <troubleTicketAction>dissociate_tt</troubleTicketAction>
+            <description>dissociate_tt</description>
+            <outputParser>None</outputParser>
+            <actionExecutionMode>Synchronous</actionExecutionMode>
+            <parameters/>
+            <actionOutcomes>
+                <actionOutcome>
+                    <name>close_tt_failed</name>
+                    <id>111</id>
+                </actionOutcome>
+                <actionOutcome>
+                    <name>close_tt_passed</name>
+                    <id>110</id>
+                </actionOutcome>
+                <actionOutcome>
+                    <name>dissociate_tt_failed</name>
+                    <id>108</id>
+                </actionOutcome>
+                <actionOutcome>
+                    <name>dissociate_tt_passed</name>
+                    <id>109</id>
+                </actionOutcome>
+            </actionOutcomes>
+        </action>
+        <action>
+            <name>list_all_available_interfaces</name>
+            <id>103</id>
+            <type>test</type>
+            <actionMode>Closed Loop</actionMode>
+            <dispatchType>HPSA</dispatchType>
+            <description>list_all_available_interfaces</description>
+            <outputParser>regex</outputParser>
+            <actionExecutionMode>Asynchronous</actionExecutionMode>
+            <parameters>
+                <parameter type="Output">
+                    <attribute>available_interface_name</attribute>
+                </parameter>
+                <parameter type="Input">
+                    <attribute>interface_ip_address</attribute>
+                </parameter>
+            </parameters>
+            <actionOutcomes>
+                <actionOutcome>
+                    <name>list_all_available_interfaces_failed</name>
+                    <id>104</id>
+                </actionOutcome>
+                <actionOutcome>
+                    <name>list_all_available_interfaces_passed</name>
+                    <id>105</id>
+                </actionOutcome>
+            </actionOutcomes>
+        </action>
+        <action>
+            <name>log_and_exit</name>
+            <id>108</id>
+            <type>test</type>
+            <actionMode>Open Loop</actionMode>
+            <dispatchType>Alarm</dispatchType>
+            <alarmAction>log_and_exit</alarmAction>
+            <description>log_and_exit</description>
+            <outputParser>None</outputParser>
+            <actionExecutionMode>Synchronous</actionExecutionMode>
+            <parameters/>
+            <actionOutcomes/>
+        </action>
+        <action>
+            <name>recover_service</name>
+            <id>104</id>
+            <type>test</type>
+            <actionMode>Closed Loop</actionMode>
+            <dispatchType>HPSA</dispatchType>
+            <description>recover_service</description>
+            <outputParser>None</outputParser>
+            <actionExecutionMode>Asynchronous</actionExecutionMode>
+            <parameters>
+                <parameter type="Input">
+                    <attribute>available_interface_name</attribute>
+                </parameter>
+                <parameter type="Input">
+                    <attribute>interface_ip_address</attribute>
+                </parameter>
+            </parameters>
+            <actionOutcomes>
+                <actionOutcome>
+                    <name>recover_service_failed</name>
+                    <id>106</id>
+                </actionOutcome>
+                <actionOutcome>
+                    <name>recover_service_passed</name>
+                    <id>107</id>
+                </actionOutcome>
+            </actionOutcomes>
+        </action>
+        <action>
+            <name>terminate_alarm</name>
+            <id>106</id>
+            <type>recover/resolve</type>
+            <actionMode>Closed Loop</actionMode>
+            <dispatchType>Alarm</dispatchType>
+            <alarmAction>terminate_alarm</alarmAction>
+            <description>terminate_alarm</description>
+            <outputParser>None</outputParser>
+            <actionExecutionMode>Synchronous</actionExecutionMode>
+            <parameters/>
+            <actionOutcomes/>
+        </action>
+        <action>
+            <name>test_bsc_interface</name>
+            <id>100</id>
+            <type>test</type>
+            <actionMode>Open Loop</actionMode>
+            <dispatchType>HPSA</dispatchType>
+            <description>test_bsc_interface</description>
+            <outputParser>regex</outputParser>
+            <actionExecutionMode>Asynchronous</actionExecutionMode>
+            <parameters>
+                <parameter type="Input">
+                    <attribute>interface_ip_address</attribute>
+                </parameter>
+                <parameter type="Output">
+                    <attribute>packet_loss</attribute>
+                </parameter>
+            </parameters>
+            <actionOutcomes>
+                <actionOutcome>
+                    <name>test_bsc_interface_failed</name>
+                    <id>100</id>
+                </actionOutcome>
+                <actionOutcome>
+                    <name>test_bsc_interface_passed</name>
+                    <id>101</id>
+                </actionOutcome>
+            </actionOutcomes>
+        </action>
+    </actions>
+    <DecisionTree name="MobileServices">
+        <flow>
+            <name>bsc_interface_down</name>
+            <operation>
+                <name>test_bsc_interface</name>
+            </operation>
+        </flow>
+    </DecisionTree>
+    <DecisionTree name="TestService"/>
+</automation_topology>
