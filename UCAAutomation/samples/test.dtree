@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ASCII"?>
+<com.hp.ucaautomation.decisionTree.plugin:DecisionTreeNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.hp.ucaautomation.decisionTree.plugin="http:///com/hp/ucaautomation/decisionTree/plugin/plugin.ecore">
+  <actionNodes actionName="test_bsc_interface" downstreamLinks="//@actionOutcomeNodes.0 //@actionOutcomeNodes.3" upstreamLinks="//@problemNodes.3" x="433" y="132"/>
+  <actionNodes actionName="list_all_avail_interface" downstreamLinks="//@actionOutcomeNodes.2" upstreamLinks="//@actionOutcomeNodes.0" x="236" y="219"/>
+  <actionNodes actionName="recover_service" downstreamLinks="//@actionOutcomeNodes.1" upstreamLinks="//@actionOutcomeNodes.2" x="374" y="256"/>
+  <actionNodes actionName="update_alarm_check_tt" downstreamLinks="//@actionOutcomeNodes.6 //@actionOutcomeNodes.7" upstreamLinks="//@actionOutcomeNodes.1" x="597" y="315"/>
+  <actionNodes actionName="update_alarm_check_tt" downstreamLinks="//@actionOutcomeNodes.4 //@actionOutcomeNodes.5" upstreamLinks="//@actionOutcomeNodes.3" x="561" y="206"/>
+  <actionNodes actionName="dissociate_tt/close_tt" upstreamLinks="//@actionOutcomeNodes.4" x="753" y="106"/>
+  <actionNodes actionName="terminate_alarm" upstreamLinks="//@actionOutcomeNodes.5" x="846" y="249"/>
+  <actionNodes actionName="terminate_alarm" upstreamLinks="//@actionOutcomeNodes.7" x="817" y="380"/>
+  <actionNodes actionName="dissociate_tt/close_tt" upstreamLinks="//@actionOutcomeNodes.6" x="255" y="375"/>
+  <problemNodes/>
+  <problemNodes/>
+  <problemNodes/>
+  <problemNodes xsi:type="com.hp.ucaautomation.decisionTree.plugin:ProblemActionOutcomeNode" problemName="bsc_interface_down" problemTargetNode="//@actionNodes.0"/>
+  <serviceNodes serviceName="MobileServices" downstreamLinks="//@problemNodes.3" upstreamLinks="//@problemNodes.0" x="273" y="86"/>
+  <serviceNodes serviceName="ADSL" upstreamLinks="//@problemNodes.1" x="503" y="75"/>
+  <serviceNodes serviceName="LTE" upstreamLinks="//@problemNodes.2" x="146" y="66"/>
+  <rootNode downstreamLinks="//@problemNodes.0 //@problemNodes.1 //@problemNodes.2" x="329" y="16"/>
+  <actionOutcomeNodes actionOutcomeName="test_bsc_interface_failed" sourceNode="//@actionNodes.0" targetNode="//@actionNodes.1" actionOutcomeId="102"/>
+  <actionOutcomeNodes actionOutcomeName="recover_service_passed" sourceNode="//@actionNodes.2" targetNode="//@actionNodes.3" actionOutcomeId="105"/>
+  <actionOutcomeNodes actionOutcomeName="list_all_avail_intf_passed" sourceNode="//@actionNodes.1" targetNode="//@actionNodes.2" actionOutcomeId="103"/>
+  <actionOutcomeNodes actionOutcomeName="test_bsc_interface_passed" sourceNode="//@actionNodes.0" targetNode="//@actionNodes.4" actionOutcomeId="101"/>
+  <actionOutcomeNodes actionOutcomeName="update_alarm_check_tt_passed" sourceNode="//@actionNodes.4" targetNode="//@actionNodes.5" actionOutcomeId="107"/>
+  <actionOutcomeNodes actionOutcomeName="update_alarm_check_tt_failed" sourceNode="//@actionNodes.4" targetNode="//@actionNodes.6" actionOutcomeId="108"/>
+  <actionOutcomeNodes actionOutcomeName="update_alarm_check_tt_passed" sourceNode="//@actionNodes.3" targetNode="//@actionNodes.8" actionOutcomeId="107"/>
+  <actionOutcomeNodes actionOutcomeName="update_alarm_check_tt_failed" sourceNode="//@actionNodes.3" targetNode="//@actionNodes.7" actionOutcomeId="108"/>
+</com.hp.ucaautomation.decisionTree.plugin:DecisionTreeNode>
